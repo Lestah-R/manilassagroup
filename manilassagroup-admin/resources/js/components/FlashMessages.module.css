@@ -1,0 +1,25 @@
+.alert {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position on the screen */
+    top: 20px; /* Space from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    padding: 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+    z-index: 9999; /* Ensure it is on top */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade-in and slide */
+}
+
+.alert.show {
+    display: block; /* Show the alert */
+    opacity: 1; /* Fully opaque */
+    transform: translateX(-50%) translateY(0); /* Position it in view */
+}
+
+.alert.hide {
+    opacity: 0; /* Fully transparent */
+    transform: translateX(-50%) translateY(-50px); /* Slide up and out of view */
+}
