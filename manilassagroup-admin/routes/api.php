@@ -38,7 +38,7 @@ Route::group([
 
   Route::get('user-organisations', [OrganisationController::class, 'userOrganisations']); //eto route para sa list ng organisation na pinost ng current use
   Route::apiResource('organisations', OrganisationController::class);
-  Route::put('/update-image-orgnanisation/{id}', [OrganisationController::class, 'updateImage']);
+  Route::post('/update-image-organisation/{id}', [OrganisationController::class, 'updateImage']);
 });
 
 

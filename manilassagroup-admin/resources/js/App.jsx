@@ -21,6 +21,7 @@ import SideBar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Page from "./components/Page";
 import FlashMessages from "./components/FlashMessages";
+import NotFound from "./components/NotFound";
 //import ExampleContext from "./ExampleContext";
 
 function App() {
@@ -137,6 +138,10 @@ function App() {
                                             <Route
                                                 path="/profile/:username/*"
                                                 element={<UserProfile />}
+                                            />
+                                            <Route
+                                                path="*"
+                                                element={<NotFound />}
                                             />
                                         </Routes>
                                         <Footer />

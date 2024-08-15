@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Page from "./Page";
 import StateContext from "../StateContext";
+import DispatchContext from "../DispatchContext";
 import Axios from "axios";
 import LoadingDotsIcon from "./LoadingDotsIcon";
 
 function UserProfile() {
+    // const navigate = useNavigate();
     const appState = useContext(StateContext);
+    const appDispatch = useContext(DispatchContext);
     const [isLoading, setIsLoading] = useState(true);
     const [organisations, setOrganisations] = useState([]);
 
@@ -43,6 +46,37 @@ function UserProfile() {
             ourRequest.cancel("Operation canceled by the user.");
         };
     }, []);
+
+    async function deleteHandler(id) {
+        const areYouSure = window.confirm(
+            "Do your really want to delete this organisation"
+        );
+        if (areYouSure) {
+            try {
+                const response = await Axios.delete(
+                    `/api/organisations/${id}`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${appState.user.token}`,
+                        },
+                    }
+                );
+                if (response.data.status === "success") {
+                    setOrganisations((prevOrganisations) =>
+                        prevOrganisations.filter((org) => org.id !== id)
+                    );
+                    appDispatch({
+                        type: "flashMessage",
+                        value: "Organisation was successfully deleted",
+                    });
+                    // navigate(`/organisation`);
+                }
+            } catch (e) {
+                console.log("There was a problem");
+                console.log(e);
+            }
+        }
+    }
 
     return (
         <>
@@ -602,16 +636,16 @@ function UserProfile() {
                                                                                     >
                                                                                         Edit
                                                                                     </Link>
-                                                                                    <button
+                                                                                    <a
                                                                                         className="btn btn-danger btn-sm"
                                                                                         onClick={() =>
-                                                                                            handleDelete(
+                                                                                            deleteHandler(
                                                                                                 org.id
                                                                                             )
                                                                                         }
                                                                                     >
                                                                                         Delete
-                                                                                    </button>
+                                                                                    </a>
                                                                                 </td>
                                                                             </tr>
                                                                         )
