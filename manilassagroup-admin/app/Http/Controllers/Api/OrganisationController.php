@@ -100,28 +100,44 @@ class OrganisationController extends Controller
 
     public function updateImage(Request $request, $id)
     {
-        // Validate the request
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        // Find the organisation
+        // \Log::info('Uploaded file:', [$request->file('photo')]);
         $organisation = Organisation::findOrFail($id);
 
-        // Handle the image upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imagePath = $image->store('organisation_images', 'public');
-            
-            // Update the image path in the database
-            $organisation->image_path = $imagePath;
-            $organisation->save();
+        // Validate the photo
+        $data = $request->validate([
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($request->hasFile('photo')) {
+            // Delete the existing photo if it exists
+            if ($organisation->photo) {
+                $previousPhotoPath = 'public/' . $organisation->photo;
+                if (Storage::exists($previousPhotoPath)) {
+                    Storage::delete($previousPhotoPath);
+                } else {
+                    // \Log::warning('Previous photo not found: ' . $previousPhotoPath);
+                }
+            }
+
+            // Store the new photo
+            $path = $request->file('photo')->store('public/organisation_images');
+
+            // Update the organisation's photo path, removing 'public/' prefix
+            $organisation->photo = str_replace('public/', '', $path);
+
+            // \Log::info('New photo path: ' . $organisation->photo);
+        } else {
+            // \Log::info('No new photo uploaded');
         }
 
-        // Return the updated organisation data
+        // Save the updated organisation record
+        $organisation->save();
+
+        // \Log::info('Updated organisation: ', $organisation->toArray());
+
         return response()->json([
             'status' => 'success',
-            'organisation' => $organisation,
+            'organisation' => $organisation
         ]);
     }
 
@@ -130,7 +146,22 @@ class OrganisationController extends Controller
      */
     public function destroy(string $id)
     {
-        
+        // Find the organisation by ID
+        $organisation = Organisation::findOrFail($id);
+
+        // Delete the photo if it exists
+        if ($organisation->photo) {
+            // Delete the existing photo from storage
+            Storage::delete('public/' . $organisation->photo);
+        }
+
+        // Delete the organisation record from the database
+        $organisation->delete();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Organisation deleted successfully',
+        ]);
     }
 
     public function userOrganisations()

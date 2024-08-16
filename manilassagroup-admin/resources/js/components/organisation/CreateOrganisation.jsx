@@ -40,7 +40,7 @@ function CreateOrganisation() {
                 type: "flashMessage",
                 value: "You added new organisation.",
             });
-            navigate(`/organisation/${response.data}`);
+            // navigate(`/organisation/${response.data}`);
             console.log("new post was created. ");
         } catch (e) {
             console.log("There was a problem");
