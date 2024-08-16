@@ -4,8 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
 import About from "./components/About";
-import Services from "./components/Services";
+import Consulting from "./components/Consulting";
 import Newsroom from "./components/Newsroom";
 import Contact from "./components/Contact";
 import Shop from "./components/Shop";
@@ -19,28 +20,32 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route
-            path='/signup'
+            path="/login"
+            element={<Login setIsAuthenticated={setIsAuthenticated} />}
+          />
+          <Route
+            path="/signup"
             element={<Signup />} // Add the Signup route
           />
           <Route
-            path='/*'
+            path="/*"
             element={
               isAuthenticated ? (
                 <>
                   <Header />
                   <Routes>
-                    <Route path='/' element={<About />} />
-                    <Route path='/services' element={<Services />} />
-                    <Route path='/newsroom' element={<Newsroom />} />
-                    <Route path='/contact' element={<Contact />} />
-                    <Route path='/shop' element={<Shop />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/consulting" element={<Consulting />} />
+                    <Route path="/newsroom" element={<Newsroom />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/shop" element={<Shop />} />
                   </Routes>
                   <Footer />
                 </>
               ) : (
-                <Navigate to='/login' />
+                <Navigate to="/login" />
               )
             }
           />
