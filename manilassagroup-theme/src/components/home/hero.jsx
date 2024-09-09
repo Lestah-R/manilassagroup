@@ -8,7 +8,7 @@ export default function Hero() {
           <div>
             <h2 className="text-xl font-bold font-poppins">
               Transforming Organizations and People through Capacity and
-              Capability Building
+              Capability Buildings s
             </h2>
           </div>
           <div>
@@ -22,7 +22,7 @@ export default function Hero() {
             </p>
             <a
               href=""
-              className="font-semibold font-poppins border w-[201px] mt-10 py-4 px-2 block text-center"
+              className="font-semibold font-poppins border w-[201px] mt-10 py-4 px-2 block text-center hover:text-customYellow hover:border-customYellow"
             >
               Get to Know Us
             </a>

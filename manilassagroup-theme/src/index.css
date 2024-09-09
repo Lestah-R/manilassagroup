@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .toggle-btn {
+    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[360deg];
+  }
+}
+
 .nav > li {
   height: 35px;
   display: grid;
@@ -12,5 +18,13 @@
 }
 
 .slick-slide > div {
-  margin: 0 20px;
+  margin: 0 25px;
+}
+
+.slick-list {
+  margin: 0 -25px;
+}
+
+.slick-slider {
+  overflow: hidden;
 }
