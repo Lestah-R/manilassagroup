@@ -8,7 +8,7 @@ export default function Cta() {
           Ready to transform and maximize your business to its fullest
           potential?
         </h1>
-        <button class="font-semibold font-poppins border w-[201px] mt-10 py-[12px]">
+        <button class="font-semibold font-poppins border border-customGray3 w-[201px] mt-10 py-[12px] hover:text-customYellow hover:border-customYellow">
           Get to Know Us
         </button>
       </div>

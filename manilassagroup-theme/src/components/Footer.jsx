@@ -44,7 +44,7 @@ function Footer() {
             <div className="space-y-10">
               <img
                 className="h-14"
-                src="https://s3-alpha-sig.figma.com/img/e38e/72cc/55c66c7a2f8218d887c3f44bb3a51278?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RFI0p3JYFw4qqeFHUwGRy4QnSLOrOl2P3b0CSqF8QigyZ8ChQCyMqjtOpQxUW1wXqAcLmF7t22Lr8tGPIVxg~jPAczLBe2S~cBvc6jZ0xSUlOBnQk5RDz8CkRTS7q9avajRF4P0n0HpNxwncoSVeg~KV6dFxNxwhGjs74xWLtFbtRV-CnjLrzSx7AY6sqWpeSyWny8F~zzx1chgZy46iQv8cFvqxNojYY69moxq5RLDLbkP2-~lzxlaQuavvpFnrDIlGFW~ETYlYu-lrS9MoEwy9hX-DSZOYM8~ydX6uYqHQu9HciWg5uH5gkky~Pu5mI8bb7hQi-8PRajHQfx~B8Q__"
+                src="/ssa-logo.png"
                 alt="ssagroup logo"
                 id="logo"
               />

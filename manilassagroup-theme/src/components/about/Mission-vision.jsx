@@ -1,5 +1,7 @@
 import React from "react";
 
+import manWithLaptop from "../../assets/images/about-page/man-with-laptop.png";
+
 export default function MissionVision() {
   return (
     <>
@@ -34,9 +36,9 @@ export default function MissionVision() {
           </div>
           <div>
             <img
-              src="https://s3-alpha-sig.figma.com/img/42e6/f130/16140a81ea1f89d43071aa53373925c5?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fcKse1WamIUTILKvcPahuGG28ccpp24D89A8MwDgeGRbxp7lLgi-dhFTFkY1O1J8P~AgoGWR-78HYQ~5iJH7n3WN8qumCNdlo1v-JLOHNG0VCfZ9BFu~CQycE~nXZi-v0C~Nxf~qHfPm0KNhR5i8dfRQa4ra-P6EE6l2sR3MAau7FsZ9bavvu4esKSMLXzgZ-lUy~yEGYWuDv7qhQlmXUIUEx3wfb5O1rgQ0LBB23efXeOzpZbfdfiv6C6oKJQFU8iQT06zmHY8B5QGru1Vr9IrdbLCwUNVSqSJY~tIN0MMzRH4zAeS1DH50oFin2ovQo3no6iwMRkkLt9l-N0dpqg__"
+              src={manWithLaptop}
               alt="Man with laptop"
-              className="object-contain w-auto"
+              className="object-cover w-full max-h-[430px]"
             />
           </div>
         </div>
