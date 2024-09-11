@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 export default function Hero() {
   return (
@@ -6,12 +8,12 @@ export default function Hero() {
       <section className="min-h-max bg-customDark py-20">
         <div className="container grid gap-5 lg:gap-10 lg:grid-cols-2 text-customWhite px-5">
           <div>
-            <h2 className="text-xl font-bold font-poppins">
+            <h2 className="text-xl font-bold font-poppins" data-aos="fade-up">
               Transforming Organizations and People through Capacity and
               Capability Buildings s
             </h2>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <p>
               Mabuhay! Part of SSA Group, a conglomerate that offers expert
               services in the fields of management consulting, training, and

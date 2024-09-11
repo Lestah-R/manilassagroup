@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -16,8 +16,15 @@ import Shop from "./components/Shop";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <>

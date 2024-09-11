@@ -19,13 +19,18 @@ const services = [
 ];
 
 export default function WhatWeOffer() {
-  const servicesElement = services.map((i) => {
+  const servicesElement = services.map((i, key) => {
     return (
       <a
         href={i.url}
         className="border-y border-customGray3 md:border-none hover:-translate-y-2 ease duration-300"
       >
-        <div className="py-8 px-5 md:py-5">
+        <div
+          className="py-8 px-5 md:py-5"
+          data-aos="fade-right"
+          data-aos-delay={`${key * 100}`}
+          key={key}
+        >
           <h4 className="text-customWhite text-md">
             {i.title}
             <span className="float-end -rotate-45">
@@ -54,7 +59,7 @@ export default function WhatWeOffer() {
           </div>
         </div>
         <div className="bg-suit-pattern min-h-[464px] bg-no-repeat bg-cover bg-[calc(55%_-_50px)_50%] md:bg-top grid items-end pb-10 px-5">
-          <div className="sm:container">
+          <div className="sm:container" data-aos="zoom-in">
             <h3 className="text-customWhite font-poppins text-[22px] font-bold max-w-[232px] sm:max-w-[430px]">
               Our primary purpose is simple: to unleash the potential that
               exists within organisations and people.

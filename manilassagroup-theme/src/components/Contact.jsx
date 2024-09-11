@@ -7,7 +7,7 @@ function ContactPage() {
       <Page title="Contact Us">
         <section className="min-h-max bg-customDark py-20">
           <div className="container px-5 grid gap-20">
-            <div className="grid gap-5" data-aos="fade-up">
+            <div className="grid gap-5">
               <h1 className="text-xl font-bold font-poppins text-customWhite">
                 How can we help you?
               </h1>
@@ -19,8 +19,6 @@ function ContactPage() {
             <form
               action=""
               className="grid gap-5 lg:block lg:space-x-5 md:max-w-screen-md"
-              data-aos="fade-up"
-              data-aos-delay="200"
             >
               <input
                 type="text"
@@ -40,11 +38,7 @@ function ContactPage() {
               </p>
             </form>
           </div>
-          <div
-            className="container px-5 mt-10"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
+          <div className="container px-5 mt-10">
             <div className="flex items-center gap-10 border-b border-customWhite py-9">
               <p className="text-sm italic text-gray-400 min-w-14">Contact</p>
               <p className="text-sm font-bold text-customWhite">
