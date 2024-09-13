@@ -44,7 +44,7 @@ export default function Companies() {
   return (
     <>
       <section className="min-h-max bg-customDark">
-        <div className="container py-12 px-5 sm:px-0">
+        <div className="container py-12 px-5 lg:px-0">
           <h3 className="text-lg font-poppins font-bold text-customWhite">
             Companies we've worked with
           </h3>

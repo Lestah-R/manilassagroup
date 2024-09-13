@@ -13,7 +13,7 @@ export default {
     },
     fontSize: {
       xs: ["12px", { lineHeight: "18px", letterSpacing: "0.1px" }],
-      sm: ["14px", { lineHeight: "22px", letterSpacing: "0.1px" }],
+      sm: ["15px", { lineHeight: "22px", letterSpacing: "0.1px" }],
       md: ["20px", { lineHeight: "22px", letterSpacing: "0.1px" }],
       lg: ["26px", { lineHeight: "34px" }],
       xl: ["40px", { lineHeight: "50px" }],
