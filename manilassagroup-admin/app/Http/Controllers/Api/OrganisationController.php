@@ -174,4 +174,11 @@ class OrganisationController extends Controller
             'organisations' => $organisations,
         ]);
     }
+
+    public function publicOrganisations()
+    {
+        $organisations = Organisation::all();
+        return response()->json($organisations);
+
+    }
 }

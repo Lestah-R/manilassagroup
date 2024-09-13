@@ -41,5 +41,8 @@ Route::group([
   Route::post('/update-image-organisation/{id}', [OrganisationController::class, 'updateImage']);
 });
 
+Route::get('public-organisations', [OrganisationController::class, 'publicOrganisations']);
+
+
 
 
